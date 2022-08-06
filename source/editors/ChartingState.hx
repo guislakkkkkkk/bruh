@@ -42,7 +42,8 @@ import openfl.net.FileReference;
 import openfl.utils.ByteArray;
 import openfl.utils.Assets as OpenFlAssets;
 import lime.media.AudioBuffer;
-import haxe.io.Bytes;
+import haxe.io.Bytes;import haxe.io.Bytes;
+
 import flash.geom.Rectangle;
 import flixel.util.FlxSort;
 #if sys
