@@ -21,12 +21,17 @@ import android.FlxVirtualPad;
 
 class MusicBeatState extends FlxUIState
 {
-	private var lastBeat:Float = 0;
-	private var lastStep:Float = 0;
+	private var curSection:Int = 0;
+	private var stepsToDo:Int = 0;
 
 	private var curStep:Int = 0;
 	private var curBeat:Int = 0;
+
+	private var curDecStep:Float = 0;
+	private var curDecBeat:Float = 0;
 	private var controls(get, never):Controls;
+
+	public static var camBeat:FlxCamera;
 
 	inline function get_controls():Controls
 		return PlayerSettings.player1.controls;
@@ -107,7 +112,6 @@ class MusicBeatState extends FlxUIState
 		var skip:Bool = FlxTransitionableState.skipNextTransOut;
 		super.create();
 
-		// Custom made Trans out
 		if(!skip) {
 			openSubState(new CustomFadeTransition(0.7, true));
 		}
