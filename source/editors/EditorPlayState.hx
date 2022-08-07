@@ -159,10 +159,6 @@ class EditorPlayState extends MusicBeatState
 		add(tipText);
 		FlxG.mouse.visible = false;
 
-		#if android
-		addAndroidControls();
-		#end
-
 		//sayGo();
 		if(!ClientPrefs.controllerMode)
 		{
