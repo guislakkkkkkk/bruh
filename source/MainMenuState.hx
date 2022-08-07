@@ -33,8 +33,12 @@ class MainMenuState extends MusicBeatState
 	private var camAchievement:FlxCamera;
 	
 	var optionShit:Array<String> = [
-		'pajero',
+		'story_mode',
+		'freeplay',
+		#if MODS_ALLOWED 'mods', #end
+		#if ACHIEVEMENTS_ALLOWED 'awards', #end
 		'credits',
+		#if !switch 'donate', #end
 		'options'
 	];
 
@@ -154,6 +158,7 @@ class MainMenuState extends MusicBeatState
 
                 #if android
 		addVirtualPad(UP_DOWN, A_B);
+		virtualPad.y = -44;
 		#end
 
 		super.create();
