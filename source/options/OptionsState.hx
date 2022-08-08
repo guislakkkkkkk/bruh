@@ -48,8 +48,7 @@ class OptionsState extends MusicBeatState
 				openSubState(new options.GameplaySettingsSubState());
 			case 'Adjust Delay and Combo':
 				LoadingState.loadAndSwitchState(new options.NoteOffsetState());
-			case 'Mobile Controls':
-				MusicBeatState.switchState(new android.AndroidControlsMenu());
+			
 		}
 	}
 
@@ -89,7 +88,8 @@ class OptionsState extends MusicBeatState
 		ClientPrefs.saveSettings();
 		
 		#if android
-		addVirtualPad(UP_DOWN, A_B);
+		addVirtualPad(UP_DOWN, A_B_C);
+		virtualPad.y = -24;
 		#end
 
 		super.create();
@@ -114,6 +114,15 @@ class OptionsState extends MusicBeatState
 			FlxG.sound.play(Paths.sound('cancelMenu'));
 			MusicBeatState.switchState(new MainMenuState());
 		}
+		
+		#if android
+		if (virtualPad.buttonC.justPressed) {
+			#if android
+			removeVirtualPad();
+			#end
+			openSubState(new android.AndroidControlsSubState());
+		}
+		#end
 
 		if (controls.ACCEPT) {
 			openSelectedSubstate(options[curSelected]);
