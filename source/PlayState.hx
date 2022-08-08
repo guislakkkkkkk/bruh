@@ -1397,7 +1397,7 @@ class PlayState extends MusicBeatState
 		#else
 		FlxG.log.warn("Platform unsupported for Runtime Shaders!");
 		return null;
-		#end
+		
 	}
 
 	public function initLuaShader(name:String, ?glslVersion:Int = 120)
@@ -1450,7 +1450,7 @@ class PlayState extends MusicBeatState
 		return false;
 	}
 	#end
-
+        #end
 	function set_songSpeed(value:Float):Float
 	{
 		if(generatedMusic)
