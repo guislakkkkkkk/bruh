@@ -382,9 +382,9 @@ class Controls extends FlxActionSet
 			scheme = None;
 		setKeyboardScheme(scheme, false);
 	}
-	#end
+	
 
-	if android
+	#if android
 	public var trackedinputsUI:Array<FlxActionInput> = [];
 	public var trackedinputsNOTES:Array<FlxActionInput> = [];
 
