@@ -2486,7 +2486,7 @@ class FunkinLua {
 				return Assets.exists(filename);
 			}
 			return Assets.exists(Paths.getPath('assets/$filename', TEXT));
-			#end
+			
 		});
 		Lua_helper.add_callback(lua, "saveFile", function(path:String, content:String, ?absolute:Bool = false)
 		{
@@ -2817,7 +2817,7 @@ class FunkinLua {
 
 		for(mod in Paths.getGlobalMods())
 			foldersToCheck.insert(0, Paths.mods(mod + '/shaders/'));
-		
+		#end
 		for (folder in foldersToCheck)
 		{
 			if(FileSystem.exists(folder))
