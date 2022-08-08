@@ -61,7 +61,7 @@ class FunkinLua {
 	public static var Function_StopLua:Dynamic = #if android 'Function_StopLua' #else 2 #end;
 
 	//public var errorHandler:String->Void;
-	#if LUA_ALLOWED
+	#if MODS_ALLOWED
 	public var lua:State = null;
 	#end
 	public var camTarget:FlxCamera;
